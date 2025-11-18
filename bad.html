@@ -1,0 +1,67 @@
+<!HTMl>
+<html>
+<head>
+  <title>Bad HTML Example
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: 'Times New Roman', Arial; }
+    .hidden { display: none }
+  </style>
+</head>
+<body>
+  <!-- using deprecated tags and bad nesting -->
+  <center>
+    <font size="+4" color="red">Welcome to my page</font>
+  </center>
+
+  <h1 id="title">Hello World
+  <p>This is a paragraph without closing the h1 properly.
+
+  <!-- duplicate IDs, inline styles, broken image link, missing alt -->
+  <img src="missing-image.jpg" style="width:300px;" id="logo" id="logo">
+
+  <!-- table used for layout, wrong table structure -->
+  <table border="1">
+    <tr>
+      <td>
+        <div>
+          <p>Left column</p>
+        </div>
+    <tr>
+      <td>
+        <p>Right column</p>
+      </td>
+  </table>
+
+  <!-- inline javascript with eval and global variables -->
+  <script>
+    var user = 'guest'
+    eval("console.log('Dangerous eval: ' + user)")
+    function doSomething(){
+      document.getElementById('title').innerHTML = '<b>Changed</b>'
+    }
+    onload = doSomething
+  </script>
+
+  <!-- unnecessary br tags for spacing and non-semantic markup -->
+  <br><br><br>
+  <a href="javascript:void(0)" onclick="alert('clicked')">Click me</a>
+
+  <!-- form with no labels, missing action, insecure method, and required fields not marked -->
+  <form>
+    <input type="text" name="username">
+    <input type="password" name="password">
+    <input type="submit" value="Submit">
+  </form>
+
+  <!-- accessibility problems: contrast & missing lang attribute above -->
+  <div style="background: #eee; color: #fff;">Low contrast text</div>
+
+  <!-- unescaped characters -->
+  <p>5 > 3 & 2 < 4</p>
+
+  <!-- orphan closing tags and typos -->
+  </div>
+  </footer>
+</body>
+</html>
